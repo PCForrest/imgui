@@ -7,17 +7,18 @@ project "imgui"
 	targetdir (bin_dir .. "/Libs/Vendor/%{prj.name}")
 	objdir (int_dir .. "/Libs/Vendor/%{prj.name}")
 
-	pchheader "%{prj.name}/_framework/pch.hpp"
-	pchsource "src/%{prj.name}/_framework/pch.cpp"
+	-- pchheader "%{prj.name}/_framework/pch.hpp"
+	-- pchsource "src/%{prj.name}/_framework/pch.cpp"
+    -- Not using precompiled headers
 
 	files
 	{
 		"premake5.lua",
-		"src/**.h",
-		"src/**.hpp",
-		"src/**.cpp",
-		"src/**.natstepfilter",
-		"src/**.natvis",
+		"*.h",
+		"*.cpp",
+		--"*.hpp",
+		--"*.natstepfilter",
+		--"*.natvis",
 	}
 
 	removefiles
@@ -27,7 +28,7 @@ project "imgui"
 
 	includedirs
 	{
-		"src",
+		"%{IncludeDir.imgui}",
 	}
 
 	dependson
