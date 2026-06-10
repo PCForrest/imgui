@@ -1,4 +1,4 @@
-project "imgui"
+﻿project "imgui"
 	kind "StaticLib"
 	language "C++"
 
@@ -12,6 +12,8 @@ project "imgui"
 		"premake5.lua",
 		"*.h",
 		"*.cpp",
+		"misc/cpp/*.h",
+		"misc/cpp/*.cpp",
 		--"*.hpp",
 		--"*.natstepfilter",
 		--"*.natvis",
