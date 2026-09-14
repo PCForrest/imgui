@@ -1,4 +1,6 @@
-﻿project "imgui"
+﻿local project_name = "imgui"
+
+project (project_name)
 	kind "StaticLib"
 	language "C++"
 
@@ -7,9 +9,10 @@
 
     -- Not using precompiled headers
 
-	files
-	{
+	files {
 		"premake5.lua",
+		"cpp.hint",
+		"local.hint",
 		"*.h",
 		"*.cpp",
 		"misc/cpp/imgui_stdlib.h",
@@ -23,28 +26,25 @@
 		--"*.natvis",
 	}
 
-	removefiles
-	{
+	removefiles	{
 		"premake5.lua",
+		"cpp.hint",
+		"local.hint",
 	}
 
-	includedirs
-	{
+	includedirs {
 		"%{IncludeDir.imgui}",
 	}
 
-	dependson
-	{
+	dependson {
 		-- nil
 	}
 
-	links
-	{
+	links {
 		-- nil
 	}
 
-	defines
-	{
+	defines {
 		"_LIB",
 	}
 	
